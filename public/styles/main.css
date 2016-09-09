@@ -1,0 +1,200 @@
+body {
+    background-image: url(background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 48px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*---------------------------*/
+/*          BUTTONS          */
+/*---------------------------*/
+.btn {
+    background-color:#2ecc71;
+    color: white;
+    border-color: white;
+    padding: 15px 80px;
+    border-width: 4px;
+    border-style: solid;
+    margin: 10px;
+    display: inline-block;
+    border-radius: 25px;
+    border-color: #24b662;
+    white-space: nowrap
+}
+
+.btn:hover{
+    background-color: #24b662;
+}
+
+/*---------------------------*/
+/*          INPUTS           */
+/*---------------------------*/
+
+input[type="text"] {
+  padding: 10px;
+  border: solid 1px #dcdcdc;
+  transition: box-shadow 0.3s, border 0.3s;
+}
+input[type="text"]:focus,
+input[type="text"].focus {
+  border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #969696;
+}
+
+input[type="password"] {
+  padding: 10px;
+  border: solid 1px #dcdcdc;
+  transition: box-shadow 0.3s, border 0.3s;
+}
+input[type="password"]:focus,
+input[type="password"].focus {
+  border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #969696;
+}
+
+/*---------------------------*/
+/*            Nav            */
+/*---------------------------*/
+
+nav {
+    height: 48px;
+    width: 100%;
+    background-color: #2ecc71;
+    position: fixed;
+    line-height: 44px;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+nav .nav-actions{
+    float: right;
+}
+
+nav a{
+    margin: 0 7px
+}
+
+/*---------------------------*/
+/*            menu           */
+/*---------------------------*/
+
+.menu{
+    background-image: url(menu.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 28px;
+    width: 28px;
+    margin: 10px;
+}
+
+.menu-panel{
+    position: fixed;
+    right: 0;
+    top: 48px;
+    width: 170px;
+    background-color: slategray;
+}
+
+.menu-panel ul{
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+.menu-panel a{
+    display: block;
+}
+
+
+/*---------------------------*/
+/*            MAIN           */
+/*---------------------------*/
+
+
+.wrapper {
+    width: 80%;
+    height: 800px;
+    margin: auto;
+    padding-top: 10px;
+}
+
+.main-container{
+    width: 80%;
+    height: 80%;
+    margin: 60px auto auto;
+    padding-top: 50px
+}
+
+/*---------------------------*/
+/*           LOGIN           */
+/*---------------------------*/
+
+.login-container{
+    margin: auto;
+    width: 600px;
+    height: 480px;
+    padding-top: 70px;
+    background-color:#ffffff;
+    text-align: center;
+    border-radius: 30px;
+}
+
+.login-container{
+}
+
+.login-container input{
+    display: block;
+    margin: auto;
+    width: 455px;
+}
+
+.login-container .btn{
+    max-width: 60px;
+}
+
+.login-container .sign-up{
+    font-size: 16px;
+}
+
+/*---------------------------*/
+/*          REGISTER         */
+/*---------------------------*/
+
+.register-container{
+    margin: auto;
+    width: 600px;
+    height: 680px;
+    padding-top: 70px;
+    background-color:#ffffff;
+    text-align: center;
+    border-radius: 30px;
+}
+
+.register-container label{
+    display: block;
+    margin: auto;
+}
+
+.register-container input{
+    display: block;
+    margin: auto;
+    width: 455px;
+}
+
+/*---------------------------*/
+/*            CHAT           */
+/*---------------------------*/
+.chat{
+    position: fixed;
+    bottom: 0;
+}
+
+.chat .chat-box{
+    height: 300px;
+    overflow: scroll;
+}

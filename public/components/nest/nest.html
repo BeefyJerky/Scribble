@@ -1,0 +1,12 @@
+<div class="nest" ng-controller='nestCtrl' style="background-color: white">
+    <input type="text" ng-model="room.title" placeholder="title"></br>
+    <textarea ng-model="room.description" placeholder="description"></textarea></br>
+    <select ng-model="room.type">
+        <option value="PUBLIC">Public</option>
+        <option value="PRIVATE">Private</option>
+    </select>
+    <a href="" class="btn" ng-click="createRoom()">CREATE</a>
+    <span ng-repeat="pRoom in pRooms track by $index">
+        <span><a ui-sref="classroom({roomName: pRoom.title})">{{pRoom.title}}</a></span>
+    </span>
+</div>
