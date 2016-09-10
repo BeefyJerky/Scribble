@@ -3,7 +3,7 @@
 angular.module('main').controller('nestCtrl', ['$scope', 'RoomService', '$rootScope', '$location', function($scope, RoomService, $rootScope, $location) {
     $scope.pRooms = [];
     $scope.createRoom = function() {
-        if($scope.room {
+        if($scope.room) {
             $scope.room.createdBy = $rootScope.userId;
         }
         RoomService.createRoom($scope.room).then(function(room) {
