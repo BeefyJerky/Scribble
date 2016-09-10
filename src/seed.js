@@ -18,28 +18,15 @@ var user1 = {
 });
 
 var user2 = {
-    email: "xujasonxu@outlook.com",
-    username: "MonkeyBeanz",
-    firstName: "Jason",
-    lastName: "Xu",
+    email: "dongxiaoli1996@gmail.com",
+    username: "UberTurtleZ",
+    firstName: "Donny",
+    lastName: "Li",
     password: "password"
 }
 
  User.findOne({'email' : user2.email}, function(error, admin) {
     if(!error && !admin) {
         User.create(user2);
-    } ;
-});
-        
-var room = {
-    createdBy: user1._id,
-    title: "Default",
-    description: "Test Room",
-    type: "PUBLIC"
-}
-
- Room.findOne({'_id' : room._id}, function(error, theRoom) {
-    if(!error && !theRoom) {
-        Room.create(room);
     } ;
 });

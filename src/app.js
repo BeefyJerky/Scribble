@@ -17,7 +17,7 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error'));
 
 app.use(session({
-  secret: 'treehouse loves you',
+  secret: "Scribble Secret",
   resave: true,
   saveUninitialized: false,
   store: new MongoStore({
