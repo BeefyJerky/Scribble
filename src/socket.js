@@ -12,7 +12,6 @@ module.exports.listen = function(http){
         
         socket.on('join', function(data){
             
-            
             if(socket.room && data.room != socket.room) {
                 socket.leave(socket.room);
             }

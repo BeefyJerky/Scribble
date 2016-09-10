@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 var MessageSchema = new mongoose.Schema({
     sender: {
-        type: mongoose.Schema.objectId,
+        type: mongoose.Schema.ObjectId,
         ref: 'User',
         required: true,
     },
