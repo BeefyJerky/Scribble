@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module('main')
-.controller('loginCtrl', ['$scope', '$location', 'AuthService', function($scope, $location, AuthService) {
+.controller('loginCtrl', ['$scope', '$state', 'AuthService', function($scope, $state, AuthService) {
 
     $scope.login = function() {
         AuthService.login($scope.user).then(function(){
-            $location.path('/nest')
+            $state.go('nest')
         });
     };
 
@@ -15,13 +15,13 @@ angular.module('main')
 
     $scope.register = function() {
        AuthService.register($scope.user).then(function(){
-            $location.path('/nest')
+            $state.go('nest')
        });
     };
 
     
 }])
-.controller('navCtrl', ['$scope', '$rootScope', '$location', 'AuthService', function($scope, $rootScope, $location, AuthService) {
+.controller('navCtrl', ['$scope', '$rootScope', '$state', 'AuthService', function($scope, $rootScope, $state, AuthService) {
     $scope.menuClicked = false;
     
     $scope.toggleMenu = function(event){
@@ -37,7 +37,7 @@ angular.module('main')
     }
     $scope.logout = function() {
         AuthService.logout().then(function(){
-            $location.path('/login');
+            $state.go('login');
         });
     }
 

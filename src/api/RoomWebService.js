@@ -3,6 +3,7 @@
 var express = require('express');
 var router = express.Router();
 var Room = require('../models/room');
+var RoomMembership = require('../models/roomMembership');
 
 router.get('/:id', function(req, res, next) {
     Room.findOne({_id : req.params.id}, function(err, room){
@@ -24,6 +25,19 @@ router.get('/type/:type', function(req, res, next) {
     });
 });
 
+router.get('/name/:name', function(req, res, next) {
+    Room.findOne({title : req.params.name}, function(err, room){
+        if(err) {
+            return next(err);
+        } else if(!room) {
+            var err = new Error('No room found');
+            err.status = 404;
+            return next(err);          
+        }
+        
+        res.send(room);
+    });
+});
 
 router.post('/', function(req, res, next) {
     if(req.body.createdBy &&
@@ -39,6 +53,14 @@ router.post('/', function(req, res, next) {
         };
         
         Room.create(roomData, function(err, room) {
+            if(room.type == 'PRIVATE') {
+                var roomMembershipData = {
+                    userId: req.session.userId,
+                    roomId: room._id
+                };
+                
+                RoomMembership.create(roomMembershipData);
+            }
             res.send(room);
         });
     } else {

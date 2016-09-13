@@ -15,7 +15,21 @@ router.get('/user/:id', function(req, res, next){
 });
 
 router.get('/authorize', function(req, res, next){
+    if(!req.session.userId){
+        var err = new Error('You are not logged in');
+        err.status = 403;
+        return next(err);
+    }
+
     return res.send(req.session.userId);
+});
+
+router.get('/isLoggedIn', function(req, res, next){
+    if(req.session.userId) {
+        return res.send(req.session.userId);
+    } else {
+        res.send(false);
+    }
 });
 
 router.post('/register', function(req, res, next){

@@ -9,5 +9,6 @@ router.get('/', function(req, res, next){
 
 router.use('/users', require('./UserWebService'));
 router.use('/rooms', require('./RoomWebService'));
+router.use('/roomMemberships', require('./RoomMembershipWebService'));
 
 module.exports = router;
