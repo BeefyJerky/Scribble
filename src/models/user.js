@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
-//var bcrypt = require('bcrypt');
+var crypto = require('crypto');
+
 var UserSchema = new mongoose.Schema({
   email: {
     type: String,
@@ -29,7 +30,11 @@ var UserSchema = new mongoose.Schema({
 });
 
 UserSchema.statics.authenticate = function(email, password, cb) {
+
+    var hash = crypto.createHash('md5').update(password).digest('hex');
+    console.log(hash);
     User.findOne({email: email}).exec(function (error, user) {
+        
         if(error) {
             return cb(error);
         } else if(!user) {
@@ -38,7 +43,7 @@ UserSchema.statics.authenticate = function(email, password, cb) {
             return cb(err);
         }
         
-        if(password === user.password){
+        if(hash === user.password){
             return cb(null, user);
         } else {
             return cb();
@@ -46,19 +51,14 @@ UserSchema.statics.authenticate = function(email, password, cb) {
     });
 }
 
-/*
 UserSchema.pre('save', function(next) {
     var user = this;
-    bcrypt.hash(user.password, 10, function(err, hash){
-        if(err) {
-            return next(err);
-        }
-        
-        user.password = hash;
-        next();
-    })
+    var hash = crypto.createHash('md5').update(user.password).digest('hex');
+
+    user.password = hash;
+    console.log(hash);
+    next();
 });
-*/
 
 var User = mongoose.model('User', UserSchema);
 module.exports = User;
