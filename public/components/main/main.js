@@ -3,6 +3,8 @@
 var app = angular.module('main', ['ui.router']);
 
 app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
+    
+    $urlRouterProvider.when('', '/')
     $httpProvider.interceptors.push('ResponseHandlerService');
 
     var authorize = ['AuthService', function(AuthService){
@@ -11,13 +13,8 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
     
     
     $stateProvider
-    .state("home", {
-        url: "/",
-        template : "<h1>Sup</h1>",
-        access : {restricted: false}
-    })
     .state("login", {
-        url: "/login",
+        url: "/",
         templateUrl : "/components/main/templates/login.html",
         access : {restricted: false}
     })
@@ -37,9 +34,9 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
             }]
         }
     })
-    .state("nest", {
-        url: "/nest",
-        templateUrl : "/components/nest/nest.html",
+    .state("home", {
+        url: "/home",
+        templateUrl : "/components/home/home.html",
         access : {restricted: true},
         resolve : {
             authorize : authorize
@@ -57,7 +54,7 @@ app.run(function($rootScope, $location, $state, AuthService, RoomService, socket
                 $state.reload();
 
             } else if(userId && !next.access.restricted){
-                $state.go('nest');
+                $state.go('main');
                 $state.reload();
             }
             

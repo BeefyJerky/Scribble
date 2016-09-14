@@ -18,6 +18,13 @@ angular.module('main').controller('nestCtrl', ['$scope', 'RoomService', '$rootSc
         });
     }
     
+    $scope.getRoomsByWildCard = function() {
+        RoomService.getRoomsByWildCard().then(function(rooms) {
+            $scope.rooms = rooms;
+            $scope.$apply;
+        })
+    }
+    
     $scope.getPublicRooms();
 
 }]);

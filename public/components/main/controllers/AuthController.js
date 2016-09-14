@@ -5,7 +5,7 @@ angular.module('main')
 
     $scope.login = function() {
         AuthService.login($scope.user).then(function(){
-            $state.go('nest')
+            $state.go('home')
         });
     };
 
@@ -15,7 +15,7 @@ angular.module('main')
 
     $scope.register = function() {
        AuthService.register($scope.user).then(function(){
-            $state.go('nest')
+            $state.go('home')
        });
     };
 

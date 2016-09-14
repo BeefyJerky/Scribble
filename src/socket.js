@@ -31,13 +31,13 @@ module.exports.listen = function(http){
             });
         });
                 
-        socket.on('disconnect', function() {
+       /* socket.on('disconnect', function() {
             socket.broadcast.to(socket.room).emit('message', {message:  socket.user.username + " has left"});                
             socket.leave(socket.room);
             socket.room = "";
             clients[socket.user.id] = socket.room;
         });
-        
+        */
         socket.on('message', function(msg){
             console.log(msg);
             console.log(socket.room);
