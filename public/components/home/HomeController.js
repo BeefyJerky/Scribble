@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('main').controller('homeCtrl', ['$scope', 'RoomService', '$rootScope', '$location', function($scope, RoomService, $rootScope, $location) {
-    $scope.pRooms = [];
+    $scope.rooms = [];
     $scope.createRoom = function() {
         if($scope.room) {
             $scope.room.createdBy = $rootScope.userId;
@@ -19,12 +19,11 @@ angular.module('main').controller('homeCtrl', ['$scope', 'RoomService', '$rootSc
     }
     
     $scope.getRoomsByWildCard = function(type, name) {
-        RoomService.getRoomsByWildCard().then(function(type, name) {
+        RoomService.getRoomsByWildCard(type, name).then(function(rooms) {
             $scope.rooms = rooms;
             $scope.$apply;
         })
     }
     
-    $scope.getPublicRooms();
-
+    $scope.getRoomsByWildCard("","");
 }]);
