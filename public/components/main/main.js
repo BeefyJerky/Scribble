@@ -4,7 +4,7 @@ var app = angular.module('main', ['ui.router']);
 
 app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
     
-    $urlRouterProvider.when('', '/')
+    $urlRouterProvider.when('', '/').otherwise('/');
     $httpProvider.interceptors.push('ResponseHandlerService');
 
     var authorize = ['AuthService', function(AuthService){
@@ -54,8 +54,7 @@ app.run(function($rootScope, $location, $state, AuthService, RoomService, socket
                 $state.reload();
 
             } else if(userId && !next.access.restricted){
-                $state.go('main');
-                $state.reload();
+                $state.go('home');
             }
             
         });

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('main').controller('nestCtrl', ['$scope', 'RoomService', '$rootScope', '$location', function($scope, RoomService, $rootScope, $location) {
+angular.module('main').controller('homeCtrl', ['$scope', 'RoomService', '$rootScope', '$location', function($scope, RoomService, $rootScope, $location) {
     $scope.pRooms = [];
     $scope.createRoom = function() {
         if($scope.room) {
@@ -17,13 +17,13 @@ angular.module('main').controller('nestCtrl', ['$scope', 'RoomService', '$rootSc
             $scope.$apply;
         });
     }
-    
+/*    
     $scope.getRoomsByWildCard = function() {
         RoomService.getRoomsByWildCard().then(function(rooms) {
             $scope.rooms = rooms;
             $scope.$apply;
         })
-    }
+    }*/
     
     $scope.getPublicRooms();
 
