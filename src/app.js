@@ -13,7 +13,6 @@ var io = require('./socket.js').listen(http);
 
 mongoose.connect("mongodb://localhost:27017/onlineClassroom");
 var db = mongoose.connection;
-
 db.on('error', console.error.bind(console, 'connection error'));
 
 app.use(session({

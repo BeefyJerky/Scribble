@@ -11,7 +11,7 @@ var user1 = {
     password: "password"
 }
 
- User.findOne({'email' : user1.email}, function(error, admin) {
+User.findOne({'email' : user1.email}, function(error, admin) {
     if(!error && !admin) {
         User.create(user1);
     } 
@@ -25,7 +25,7 @@ var user2 = {
     password: "password"
 }
 
- User.findOne({'email' : user2.email}, function(error, admin) {
+User.findOne({'email' : user2.email}, function(error, admin) {
     if(!error && !admin) {
         User.create(user2);
     } ;

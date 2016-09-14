@@ -1,13 +1,12 @@
-<nav ng-controller="navCtrl">
+<nav ng-show="userId" ng-controller="navCtrl">
     <a ui-sref="home">Cloud Classroom</a>
     <span class="nav-actions">
-        <a ng-hide="userId" ui-sref="login">Login</a>
-        <button ng-show="userId" class="menu" ng-click="toggleMenu($event)"></button>
+        <button class="menu" ng-click="toggleMenu($event)"></button>
     </span>
     <div ng-show="menuClicked" class="menu-panel">
         <ul>
             <li>
-                <a ng-show="userId" href="" ng-click="logout()">Logout</a>
+                <a href="" ng-click="logout()">Logout</a>
             </li>
         </ul>
     </div>
