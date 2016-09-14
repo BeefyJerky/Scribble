@@ -1,8 +1,8 @@
 body {
-    background-image: url(background.png);
-    background-repeat: no-repeat;
+    background-color: rgb(176, 70, 50);
     background-size: cover;
-    padding-top: 48px;
+    height: 100%;
+    width: 100%;
 }
 
 a {
@@ -123,34 +123,29 @@ nav a{
     padding-top: 10px;
 }
 
-.main-container{
-    width: 80%;
-    height: 80%;
-    margin: 60px auto auto;
-    padding-top: 50px
-}
-
 /*---------------------------*/
 /*           LOGIN           */
 /*---------------------------*/
 
 .login-container{
+    position: relative;
+    top: 40%;
+    height: auto;
+    width: 40%;
     margin: auto;
-    width: 600px;
-    height: 480px;
-    padding-top: 70px;
-    background-color:#ffffff;
+    padding: auto;
     text-align: center;
-    border-radius: 30px;
-}
+    background-color:#ffffff;
+    
+    
+    border-radius: 25px;
 
-.login-container{
 }
 
 .login-container input{
     display: block;
     margin: auto;
-    width: 455px;
+    width: 60%;
 }
 
 .login-container .btn{
@@ -159,6 +154,10 @@ nav a{
 
 .login-container .sign-up{
     font-size: 16px;
+}
+
+#scribble-login-title {
+    font-family: "Comic Sans MS";
 }
 
 /*---------------------------*/
