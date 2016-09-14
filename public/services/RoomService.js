@@ -35,8 +35,8 @@ angular.module('main').service('RoomService', function($http, $q) {
     
     this.getRoomsByWildCard = function(type, name) {
         var defer = $q.defer();
-        $http.post('/api/rooms/search', params: {"type" : type, "name" name})
-            .success(function(data){
+        $http.post('/api/rooms/search', {params: {type : type, name : name}})
+        .success(function(data) {
             defer.resolve(data);
         })
         .catch(function(error){
