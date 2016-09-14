@@ -1,7 +1,11 @@
 <div class="login-container" ng-controller="loginCtrl">
 	<h1 id="scribble-login-title">Scribble</h1>
-    <input type="text" ng-model="user.email" placeholder="Email"></br>
-    <input type="password" ng-model="user.password" placeholder="Password"></br>
-    <a href="" class="btn" ng-click="login()">SIGN IN</a>
+    <form id="login-form" ui-keypress="{13:'login()'}">
+	    <input type="text" ng-model="user.email" placeholder="Email" ng-enter="login()">
+	    </br>
+	    <input type="password" ng-model="user.password" placeholder="Password" ng-enter="login()">
+	    </br>
+	    <a href="" class="btn" ng-click="login()">SIGN IN</a>
+    </form>
     <div class="sign-up">Don't have an account? <a ui-sref="register" class="">Sign up</a></div>
 </div>
