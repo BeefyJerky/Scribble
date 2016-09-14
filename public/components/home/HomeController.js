@@ -17,13 +17,13 @@ angular.module('main').controller('homeCtrl', ['$scope', 'RoomService', '$rootSc
             $scope.$apply;
         });
     }
-/*    
-    $scope.getRoomsByWildCard = function() {
-        RoomService.getRoomsByWildCard().then(function(rooms) {
+    
+    $scope.getRoomsByWildCard = function(type, name) {
+        RoomService.getRoomsByWildCard().then(function(type, name) {
             $scope.rooms = rooms;
             $scope.$apply;
         })
-    }*/
+    }
     
     $scope.getPublicRooms();
 

@@ -32,4 +32,16 @@ angular.module('main').service('RoomService', function($http, $q) {
         });
         return defer.promise;
     }
+    
+    this.getRoomsByWildCard = function(type, name) {
+        var defer = $q.defer();
+        $http.post('/api/rooms/search', params: {"type" : type, "name" name})
+            .success(function(data){
+            defer.resolve(data);
+        })
+        .catch(function(error){
+            defer.reject(error);
+        });
+        return defer.promise;
+    }
 });

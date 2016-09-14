@@ -39,6 +39,28 @@ router.get('/name/:name', function(req, res, next) {
     });
 });
 
+router.get('/search', function(req, res, next) {
+    var filter = {};
+    
+    if(req.query.type) {
+        filter.type = req.query.type;
+    }
+    
+    if(!req.query.name) {
+        req.query.name = "";
+    }
+    
+    filter.title = {$regex : req.query.name, $options: 'i'};
+    
+    Room.find(filter, function(err, rooms) {
+        if(err) {
+            return next(err);
+        }
+        
+        res.send(rooms);
+    });
+});
+
 router.post('/', function(req, res, next) {
     if(req.body.createdBy &&
       req.body.title &&
