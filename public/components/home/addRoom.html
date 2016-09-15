@@ -1,0 +1,11 @@
+ <div>
+     <ng-include src="/addRoom">
+     </ng-include>
+    <input type="text" ng-model="room.title" placeholder="title"></br>
+    <textarea ng-model="room.description" placeholder="description"></textarea></br>
+    <select ng-model="room.type">
+        <option value="PUBLIC">Public</option>
+        <option value="PRIVATE">Private</option>
+    </select>
+    <a href="" class="btn" ng-click="createRoom()">CREATE</a>
+ </div>
