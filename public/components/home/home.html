@@ -1,23 +1,21 @@
-<div class="home" ng-controller='homeCtrl' style="background-color: white">
-    <div>
-        <input type="text" ng-model="room.title" placeholder="title"></br>
-        <textarea ng-model="room.description" placeholder="description"></textarea></br>
-        <select ng-model="room.type">
+<div class="home" ng-controller='homeCtrl'>
+    <div class="roomListContainer" ng-init="rooms = []">
+        <h2>Rooms</h2>
+        <label>Type</label>
+        <select ng-model="searchType" ng-change="getRoomsByWildCard(searchType, searchName)">
+            <option value=""></option>
             <option value="PUBLIC">Public</option>
             <option value="PRIVATE">Private</option>
         </select>
-        <a href="" class="btn" ng-click="createRoom()">CREATE</a>
+        <label>Name</label>
+        <input type="text" ng-model="searchName" ng-change="getRoomsByWildCard(searchType, searchName)">
+        <div ng-repeat="room in rooms track by $index">
+            <div ng-click="showRoom(room)">{{room.title}}</div>
+        </div>
     </div>
-    <h2>Rooms</h2>
-    <label>Type</label>
-    <select ng-model="searchType" ng-change="getRoomsByWildCard(searchType, searchName)">
-        <option value=""></option>
-        <option value="PUBLIC">Public</option>
-        <option value="PRIVATE">Private</option>
-    </select>
-    <label>Name</label>
-    <input type="text" ng-model="searchName" ng-change="getRoomsByWildCard(searchType, searchName)">
-    <div ng-repeat="room in rooms track by $index">
-        <a ui-sref="classroom({roomName: room.title})">{{room.title}}</a>
+    <div class="infoContainer" ng-show="clickedRoom">
+        <h3>{{clickedRoom.title}}</h3>
+        <p>{{clickedRoom.description}}</p>
+        <a class="btn" ui-sref="room({roomName: clickedRoom.title})">Enter</a>
     </div>
 </div>

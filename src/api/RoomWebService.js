@@ -40,7 +40,6 @@ router.get('/name/:name', function(req, res, next) {
 });
 
 router.get('/filter/search', function(req, res, next) {
-    console.log(req);
     var filter = {};
     
     if(req.query.type) {

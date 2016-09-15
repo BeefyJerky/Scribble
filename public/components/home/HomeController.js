@@ -1,13 +1,12 @@
 'use strict';
 
 angular.module('main').controller('homeCtrl', ['$scope', 'RoomService', '$rootScope', '$location', function($scope, RoomService, $rootScope, $location) {
-    $scope.rooms = [];
     $scope.createRoom = function() {
         if($scope.room) {
             $scope.room.createdBy = $rootScope.userId;
         }
         RoomService.createRoom($scope.room).then(function(room) {
-            $location.path('/classroom/' + room.title);
+            $location.path('/room/' + room.title);
         });
     }
     
@@ -23,6 +22,10 @@ angular.module('main').controller('homeCtrl', ['$scope', 'RoomService', '$rootSc
             $scope.rooms = rooms;
             $scope.$apply;
         })
+    }
+    
+    $scope.showRoom = function(room) {
+        $scope.clickedRoom = room;
     }
     
     $scope.getRoomsByWildCard("","");

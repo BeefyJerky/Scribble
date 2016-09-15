@@ -23,8 +23,8 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
         templateUrl : "/components/main/templates/register.html",
         access : {restricted: false}
     })
-    .state("classroom", {
-        url: "/classroom/:roomName",
+    .state("room", {
+        url: "/room/:roomName",
         templateUrl : "/components/chat/chat.html",
         access : {restricted: true},
         resolve : {

@@ -117,10 +117,9 @@ nav a{
 
 
 .wrapper {
-    width: 80%;
-    height: 800px;
     margin: auto;
     padding-top: 10px;
+    background-color: transparent;
 }
 
 /*---------------------------*/
