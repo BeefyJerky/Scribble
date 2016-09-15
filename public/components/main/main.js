@@ -25,7 +25,7 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
     })
     .state("room", {
         url: "/room/:roomName",
-        templateUrl : "/components/chat/chat.html",
+        templateUrl : "/components/room/room.html",
         access : {restricted: true},
         resolve : {
             authorize : authorize,

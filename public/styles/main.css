@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(176, 70, 50);
+    background-color: #9F4332;
     background-size: cover;
     height: 100%;
     width: 100%;
@@ -64,7 +64,7 @@ nav {
     height: 48px;
     width: 100%;
     background-color: #2ecc71;
-    position: fixed;
+    position: relative;
     line-height: 44px;
     top: 0;
     left: 0;
@@ -125,6 +125,10 @@ nav a{
 /*---------------------------*/
 /*           LOGIN           */
 /*---------------------------*/
+
+#login-form {
+    margin: 50px;
+}
 
 .login-container{
     position: relative;
@@ -195,4 +199,7 @@ nav a{
 .chat .chat-box{
     height: 300px;
     overflow: scroll;
+}
+
+.room {
 }
