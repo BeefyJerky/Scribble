@@ -202,3 +202,60 @@ nav a{
 
 .room {
 }
+
+/*---------------------------*/
+/*            HOME           */
+/*---------------------------*/
+
+.home {
+    margin: 40px;
+    color: white;
+    height: 645px;
+
+}
+
+.roomListContainer {
+    display: inline-block;
+    background-color: darkorange;
+    margin-right: 30px;
+    float: left;
+    width: 60%;
+    padding: 30px;
+    height: 100%;
+}
+
+.roomListContainer table{
+    width: 100%;
+    margin-top: 33px;
+}
+
+.roomListContainer table .odd {
+    background-color: #F7810A;
+}
+
+.roomListContainer table td {
+    height: 30px;
+    padding-left: 18px;
+}
+
+.roomListContainer table tr:hover {
+    background-color: black;
+    color: white;
+}
+
+.infoContainer {
+    display: inline-block;
+    height: 100%;
+    width: 30%;
+    float: right;
+    background-color: springgreen;
+    padding: 30px;
+}
+
+.infoContainer p{
+    height: 500px;
+}
+
+.infoContainer .btn{
+    margin: auto;
+}

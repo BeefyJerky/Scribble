@@ -1,6 +1,6 @@
 <div class="home" ng-controller='homeCtrl'>
+    <h2>Rooms</h2>
     <div class="roomListContainer" ng-init="rooms = []">
-        <h2>Rooms</h2>
         <label>Type</label>
         <select ng-model="searchType" ng-change="getRoomsByWildCard(searchType, searchName)">
             <option value=""></option>
@@ -9,9 +9,11 @@
         </select>
         <label>Name</label>
         <input type="text" ng-model="searchName" ng-change="getRoomsByWildCard(searchType, searchName)">
-        <div ng-repeat="room in rooms track by $index">
-            <div ng-click="showRoom(room)">{{room.title}}</div>
-        </div>
+        <table>
+            <tr ng-repeat="room in rooms track by $index"  ng-class-odd="'odd'">
+                    <td ng-click="showRoom(room)">{{room.title}}</td>
+            </tr>
+        </table>
     </div>
     <div class="infoContainer" ng-show="clickedRoom">
         <h3>{{clickedRoom.title}}</h3>
