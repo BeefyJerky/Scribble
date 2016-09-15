@@ -131,18 +131,17 @@ nav a{
 }
 
 .login-container{
-    position: relative;
-    top: 40%;
-    height: auto;
-    width: 40%;
-    margin: auto;
-    padding: auto;
     text-align: center;
     background-color:#ffffff;
-    
-    
     border-radius: 25px;
 
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+    padding: 10px;
 }
 
 .login-container input{
