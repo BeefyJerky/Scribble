@@ -281,7 +281,7 @@ nav a{
 
 .chat .chat-box{
     height: 90%;
-    overflow-y: scroll;
+    overflow-y: auto;
     border: 1px solid #000;
     padding: 10px;
 }
