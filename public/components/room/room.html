@@ -1,3 +1,9 @@
 <div class="room" ng-controller="roomCtrl">
-    <ng-include src="'components/chat/chat.html'"></ng-include>
+	<div class="usersList">
+		<h1 class="room-title"> Users ({{numUsers}}) </h1>
+	</div>
+	<div class="drawboard">
+		drawboard here
+	</div>
+    <ng-include class="chat-container" src="'components/chat/chat.html'"></ng-include>
 </div>

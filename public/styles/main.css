@@ -57,11 +57,11 @@ input[type="password"].focus {
 }
 
 /*---------------------------*/
-/*            Nav            */
+/*         NAVIGATION        */
 /*---------------------------*/
 
 nav {
-    height: 48px;
+    height: 5vh;
     width: 100%;
     background-color: #2ecc71;
     position: relative;
@@ -80,7 +80,7 @@ nav a{
 }
 
 /*---------------------------*/
-/*            menu           */
+/*            MENU           */
 /*---------------------------*/
 
 .menu{
@@ -95,7 +95,7 @@ nav a{
 .menu-panel{
     position: fixed;
     right: 0;
-    top: 48px;
+    top: 5vh;
     width: 170px;
     background-color: slategray;
 }
@@ -188,22 +188,6 @@ nav a{
 }
 
 /*---------------------------*/
-/*            CHAT           */
-/*---------------------------*/
-.chat{
-    position: fixed;
-    bottom: 0;
-}
-
-.chat .chat-box{
-    height: 300px;
-    overflow: scroll;
-}
-
-.room {
-}
-
-/*---------------------------*/
 /*            HOME           */
 /*---------------------------*/
 
@@ -258,4 +242,50 @@ nav a{
 
 .infoContainer .btn{
     margin: auto;
+}
+
+/*---------------------------*/
+/*            ROOM           */
+/*---------------------------*/
+.room {
+}
+
+.room-title {
+    text-align: center;
+}
+
+.usersList {
+    float: left;
+    width: 19%;
+    border: 1px solid #000;
+    height: 90vh;
+}
+
+.drawboard {
+    float: left;
+    width: 49%;
+    height: 90vh;
+    margin-left: 20px;
+    border: 1px solid #000;
+}
+
+.chat-container{
+    float: right;
+    width: 29%;
+    margin: auto;
+}
+
+.chat {
+    height: 90vh;
+}
+
+.chat .chat-box{
+    height: 90%;
+    overflow-y: scroll;
+    border: 1px solid #000;
+    padding: 10px;
+}
+
+.chat .chat-input {
+    height: 10%;
 }

@@ -22,11 +22,11 @@ angular.module('main')
     $scope.send = function(){
         console.log($scope.message);
         socket.emit('message', {message: $scope.message});
+        $scope.message = "";
     };
 }])
 .factory('socket', function($rootScope, $stateParams) {
-    var socket = io();        
-        
+    var socket = io();
     return {
         on: function(eventName, callback) {
             socket.on(eventName, function() {

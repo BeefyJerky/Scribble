@@ -4,6 +4,8 @@
             <span>{{msg.username}} {{msg.message}}</span>
         </div>
     </div>
-    <input type="text" ng-model="message" ng-enter="send()"/>
-    <span class="btn" ng-click = send()>Send</span>
+    <div class="chat-input">
+	    <input type="text" ng-model="message" ng-enter="send()"/>
+	    <span class="btn" ng-click = send()>Send</span>
+	</div>
 </div>
